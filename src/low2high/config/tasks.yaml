@@ -1,0 +1,42 @@
+audit_website_task:
+  description: >
+    Review the following technical metrics gathered by Playwright:
+    {metrics}
+    Identify any critical conversion blockers (e.g., missing contact forms).
+  expected_output: "A short 3-bullet point summary of critical technical fixes."
+
+seo_audit_task:
+  description: >
+    Review the following SEO metrics:
+    {seo_metrics}
+    Determine if this website is optimized for local search.
+  expected_output: "A concise paragraph outlining the SEO health and necessary improvements."
+
+recommendation_task:
+  description: >
+    Review the following business digital audit profile:
+    {audit_data}
+    
+    Based on this data:
+    1. Identify the top 5 weaknesses.
+    2. Propose a concrete solution for each.
+    3. Estimate the business impact of fixing them.
+    4. Assign a Priority (High, Medium, Low).
+    5. Estimate the Effort Level (High, Medium, Low).
+  expected_output: "A JSON array of recommendations. Format: [{{'weakness': '...', 'solution': '...', 'impact': '...', 'priority': '...', 'effort': '...'}}]"
+
+email_writing_task:
+  description: >
+    You are writing an outreach email to the owner of {business_id}.
+    Here is their overall digital maturity grade: {maturity_grade}
+    Here are the top strategic recommendations we identified:
+    {recommendations}
+    
+    Write a short, punchy, and highly personalized cold email. 
+    1. Start by complementing something about their business (use the business name).
+    2. Gently point out a key area of improvement based on the recommendations.
+    3. State that we have prepared a comprehensive Digital Maturity Audit Report for them.
+    4. Provide a clear Call to Action (CTA) asking for a 10-minute call to review the report and help them grow.
+    
+    Do NOT include a subject line, just the body of the email. Keep it under 150 words.
+  expected_output: "The professional email body text ready to be sent to the client."
